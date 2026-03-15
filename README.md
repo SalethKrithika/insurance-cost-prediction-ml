@@ -27,29 +27,20 @@ The dataset used is the **Insurance dataset**, which contains medical cost infor
 ![After Prediction](after_prediction.png)
 
 ## Files in the Project
-
-- `app.py` – Flask application
-- `insurance_model.pkl` – Trained machine learning model
-- `insurance.csv` – Dataset used for training
-- `index.html` – User interface
-- `style.css` – Styling for the UI
-- `best_model_name.txt` – Stores the best model name
+- `app.py` – Flask application  
+- `insurance_model.pkl` – Trained machine learning model  
+- `insurance.csv` – Dataset used for training  
+- `index.html` – User interface  
+- `style.css` – Styling for the UI  
+- `best_model_name.txt` – Stores the best model name  
 
 ## How to Run the Project
 
-1. Install required libraries
-```
+### Install required libraries
 pip install pandas numpy scikit-learn flask
-```
 
-2. Run the application
-```
+### Run the application
 python app.py
-```
 
-3. Open browser and go to
-```
+### Open browser and go to
 http://127.0.0.1:5000
-```
-
-The application will allow users to enter data and predict insurance cost.
