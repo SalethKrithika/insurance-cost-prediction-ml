@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Insurance Prediction</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<h1 class="title">Insurance Prediction</h1>
+
+<div class="main-container">
+
+<!-- FORM SECTION -->
+
+<div class="card">
+
+<form action="/predict" method="post">
+
+<input type="number" name="age" placeholder="Age" required>
+
+<select name="sex">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+
+<input type="number" step="0.1" name="bmi" placeholder="BMI" required>
+
+<input type="number" name="children" placeholder="Children" required>
+
+<select name="smoker">
+<option value="yes">Smoker</option>
+<option value="no">Non Smoker</option>
+</select>
+
+<select name="region">
+<option value="southwest">Southwest</option>
+<option value="southeast">Southeast</option>
+<option value="northwest">Northwest</option>
+<option value="northeast">Northeast</option>
+</select>
+
+<button type="submit">Predict Insurance Cost</button>
+
+</form>
+
+</div>
+
+
+<!-- RESULT SECTION -->
+
+<div class="result-card">
+
+{% if predictions %}
+
+<h2>Algorithm Predictions</h2>
+
+<table>
+
+<tr>
+<th>Algorithm</th>
+<th>Prediction</th>
+</tr>
+
+{% for algo,pred in predictions.items() %}
+
+<tr>
+
+<td>{{algo}}</td>
+
+<td>${{pred}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h3 class="best">Best Algorithm : {{best_algo}}</h3>
+
+<h3 class="best">Best Prediction : ${{best_prediction}}</h3>
+
+{% else %}
+
+<h2 class="placeholder">
+
+Predictions will appear here after submitting the form.
+
+</h2>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
